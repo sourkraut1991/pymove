@@ -23,8 +23,8 @@ choice = ''
 # Start a loop that runs until the user enters the value for 'quit'.
 while choice != 'q':
     # Give all the choices in a series of print statements.
-    print("\n[1] Enter 1 for files")
-    print("[2] Enter 2 for folders")
+    print("\n[1] Enter 1 for moving")
+    print("[2] Enter 2 for removing")
     print("[q] Enter q to quit.")
 
     # Ask for the user's choice.
