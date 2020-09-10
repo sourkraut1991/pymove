@@ -41,9 +41,9 @@ while choice != 'q':
 
     # Respond to the user's choice.
     if choice == '1':
-        Prob1()
+        file()
     elif choice == '2':
-            Prob2()
+            folder()
     elif choice == 'q':
         print("\nHave a good day!")
     else:
