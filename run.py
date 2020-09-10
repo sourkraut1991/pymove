@@ -2,27 +2,18 @@
 import os
 import sys
 import shutil
-def file():
-## Get input ##
-    myfile= raw_input("Enter file name to delete: ")
-
-## Try to delete the file ##
-try:
-    os.remove(myfile)
-except OSError as e:  ## if failed, report it back to the user ##
-    print ("Error: %s - %s." % (e.filename, e.strerror))
+def move():
+	print ("broken")
 
 
-def folder():
-# Get directory name
-    mydir= raw_input("Enter directory name: ")
-
-## Try to remove tree; if failed show an error using try...except on screen
-try:
-    shutil.rmtree(mydir)
-except OSError as e:
-    print ("Error: %s - %s." % (e.filename, e.strerror))
-
+def remove(path):
+    """ param <path> could either be relative or absolute. """
+    if os.path.isfile(path) or os.path.islink(path):
+        os.remove(path)  # remove the file
+    elif os.path.isdir(path):
+        shutil.rmtree(path)  # remove dir and all contains
+    else:
+        raise ValueError("file {} is not a file or dir.".format(path))
 # Give the user some context.
 print("\nWelcome to my file mover and deleter")
 
@@ -41,9 +32,9 @@ while choice != 'q':
 
     # Respond to the user's choice.
     if choice == '1':
-        file()
+        file2()
     elif choice == '2':
-            folder()
+            remove(path)
     elif choice == 'q':
         print("\nHave a good day!")
     else:
